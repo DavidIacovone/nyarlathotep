@@ -14,7 +14,7 @@ export const Categories = ({ data }: CategoriesProps) => {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 
-	const categoryId = searchParams.get('categoryName');
+	const categoryName = searchParams.get('categoryName');
 
 	const onClick = (name: string | undefined) => {
 		const query = { categoryName: name };
@@ -50,7 +50,7 @@ export const Categories = ({ data }: CategoriesProps) => {
           hover:opacity-75 
           transition
         `,
-					!categoryId ? 'bg-primary/25' : 'bg-primary/10'
+					!categoryName ? 'bg-primary/25' : 'bg-primary/10'
 				)}>
 				Newest
 			</button>
@@ -73,7 +73,9 @@ export const Categories = ({ data }: CategoriesProps) => {
             hover:opacity-75 
             transition
           `,
-						item.id === categoryId ? 'bg-primary/25' : 'bg-primary/10'
+						item.name === categoryName
+							? 'bg-primary/25'
+							: 'bg-primary/10'
 					)}
 					key={item.id}>
 					{item.name}
