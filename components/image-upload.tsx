@@ -4,9 +4,6 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { CldUploadButton } from 'next-cloudinary';
 
-import { Button } from '@/components/ui/button';
-import { ImageIcon, X } from 'lucide-react';
-
 interface ImageUploadProps {
 	value: string;
 	onChange: (src: string) => void;
@@ -29,7 +26,7 @@ export const ImageUpload = ({ value, onChange, disabled }: ImageUploadProps) => 
 			<CldUploadButton
 				options={{ maxFiles: 1 }}
 				onUpload={(result: any) => onChange(result.info.secure_url)}
-				uploadPreset='t4drjppf'>
+				uploadPreset='emd5eje1'>
 				<div
 					className='
             p-4 

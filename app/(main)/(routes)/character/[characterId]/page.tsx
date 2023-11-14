@@ -1,3 +1,4 @@
+import { CharacterForm } from '@/components/character-form';
 import prismadb from '@/lib/prismadb';
 
 interface CharacterIdPageProps {
@@ -15,7 +16,12 @@ const CharacterIdPage = async ({ params }: CharacterIdPageProps) => {
 
 	const categories = await prismadb.category.findMany();
 
-	return <div>Hello Character ID</div>;
+	return (
+		<CharacterForm
+			initialData={character}
+			categories={categories}
+		/>
+	);
 };
 
 export default CharacterIdPage;
