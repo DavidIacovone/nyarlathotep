@@ -12,10 +12,10 @@ datasource db {
 model Category {
   id   String @id @default(uuid())
   name String 
-  companions Companion[]
+  character Character[]
 }
 
-model Companion {
+model Character {
   id            String @id @default(uuid())
   userId        String
   userName      String
