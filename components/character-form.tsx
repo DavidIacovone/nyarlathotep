@@ -94,9 +94,9 @@ export const CharacterForm = ({ categories, initialData }: CharacterFormProps) =
 	const onSubmit = async (values: z.infer<typeof formSchema>) => {
 		try {
 			if (initialData) {
-				await axios.patch(`/api/Character/${initialData.id}`, values);
+				await axios.patch(`/api/character/${initialData.id}`, values);
 			} else {
-				await axios.post('/api/Character', values);
+				await axios.post('/api/character', values);
 			}
 
 			toast({
