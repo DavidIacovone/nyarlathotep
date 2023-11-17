@@ -38,7 +38,7 @@ export const ChatHeader = ({ Character }: ChatHeaderProps) => {
 
 	const onDelete = async () => {
 		try {
-			await axios.delete(`/api/Character/${Character.id}`);
+			await axios.delete(`/api/character/${Character.id}`);
 			toast({
 				description: 'Success.',
 			});
