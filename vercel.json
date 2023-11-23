@@ -2,7 +2,7 @@
 	"version": 2,
 	"functions": {
 		"api": {
-			"memory": 512,
+			"memory": 3080,
 			"maxDuration": 60
 		}
 	}
