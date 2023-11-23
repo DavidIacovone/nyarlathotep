@@ -2,7 +2,11 @@ import { Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Sidebar } from '@/components/sidebar';
 
-export const MobileSidebar = () => {
+interface mobileSidebarProps {
+	isPro: boolean;
+}
+
+export const MobileSidebar = ({ isPro }: mobileSidebarProps) => {
 	return (
 		<Sheet>
 			<SheetTrigger className='md:hidden pr-4'>
@@ -11,7 +15,7 @@ export const MobileSidebar = () => {
 			<SheetContent
 				side='left'
 				className='p-0 bg-secondary pt-10 w-32'>
-				<Sidebar />
+				<Sidebar isPro={isPro} />
 			</SheetContent>
 		</Sheet>
 	);
