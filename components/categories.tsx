@@ -14,10 +14,10 @@ export const Categories = ({ data }: CategoriesProps) => {
 	const router = useRouter();
 	const searchParams = useSearchParams();
 
-	const categoryName = searchParams.get('categoryName');
+	const categoryId = searchParams.get('categoryId');
 
-	const onClick = (name: string | undefined) => {
-		const query = { categoryName: name };
+	const onClick = (id: string | undefined) => {
+		const query = { categoryId: id };
 
 		const url = qs.stringifyUrl(
 			{
@@ -50,13 +50,13 @@ export const Categories = ({ data }: CategoriesProps) => {
           hover:opacity-75 
           transition
         `,
-					!categoryName ? 'bg-primary/25' : 'bg-primary/10'
+					!categoryId ? 'bg-primary/25' : 'bg-primary/10'
 				)}>
 				Newest
 			</button>
 			{data.map((item) => (
 				<button
-					onClick={() => onClick(item.name)}
+					onClick={() => onClick(item.id)}
 					className={cn(
 						`
             flex 
@@ -73,9 +73,7 @@ export const Categories = ({ data }: CategoriesProps) => {
             hover:opacity-75 
             transition
           `,
-						item.name === categoryName
-							? 'bg-primary/25'
-							: 'bg-primary/10'
+						item.id === categoryId ? 'bg-primary/25' : 'bg-primary/10'
 					)}
 					key={item.id}>
 					{item.name}
