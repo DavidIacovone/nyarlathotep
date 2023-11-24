@@ -18,3 +18,11 @@ for testing purposes.
 
 The app currently is connected to a stripe demo site which allows to perform a mock
 payment. Just refer to this doc page https://stripe.com/docs/testing
+
+## Testing chat
+
+The chat should work fine for you on the deployed app straightaway. However,
+sometimes netlify might cause some issues here due to the pricing tier selected for
+the app. The chat feature requires a lot computation power due to it's ai powered
+backend and sometimes this is too much for netlify free tier. If you encounter this
+issue please run the app locally for testing.
