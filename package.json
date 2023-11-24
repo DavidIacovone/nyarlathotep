@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"deploy": "npm run build && npm run prisma",
+		"deploy": "npm run prisma && npm run build",
 		"start": "next start",
 		"lint": "next lint",
 		"prisma": "npx prisma generate"
